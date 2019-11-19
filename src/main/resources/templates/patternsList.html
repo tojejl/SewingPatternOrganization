@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body>
+<h2> Welcome</h2>
+
+<br/><br/>
+Number of Patterns currently in the system: <span th:text="${patterns.size()}">Count goes here!</span>
+
+<ul>
+    <li th:each="pattern: ${patterns}" th:text="${pattern.PatternCompany}">Pattern goes here</li>
+</ul>
+
+<form action="/patterns/new" method="post">
+    <input type="text" name="patternInfo" />
+    <input type="submit" value="Add This Pattern" />
+</form>
+</body>
+</html>
