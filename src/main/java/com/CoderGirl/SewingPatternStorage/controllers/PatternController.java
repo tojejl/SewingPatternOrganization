@@ -19,7 +19,7 @@ public class PatternController {
 
     public PatternController(){
         patterns = new ArrayList<PatternInfo>();
-        patterns.add(new PatternInfo("Simplicity W2341", null, null));
+        patterns.add(new PatternInfo("Simplicity W2341", null, null, null, null));
     }
 
     @RequestMapping("/about")
@@ -40,7 +40,7 @@ public class PatternController {
     public String addNewPattern(Model model, @RequestParam String patternInfo){
         System.out.println("Adding New Pattern: " + patternInfo);
 
-        patterns.add(new PatternInfo(patternInfo, null, null));
+        patterns.add(new PatternInfo(patternInfo, null, null, null, null));
         return "redirect:";
     }
 

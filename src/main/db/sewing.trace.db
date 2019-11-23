@@ -1,0 +1,204 @@
+2019-11-23 15:17:38 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Schema "SEWING" not found; SQL statement:
+create table sewing.patterns(ID INT PRIMARY KEY AUTO-INCREMENT,
+patternCompany VARCHAR(255) DEFAULT ' ',
+patternNumber VARCHAR(255) DEFAULT ' ',
+sizeRange VARCHAR(255) DEAULT ' ',
+patternDescription VARCHAR(255) DEFAULT ' ',
+patternNotes VARCHAR(255) DEFAULT ' ',) [90079-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.getSchema(Parser.java:701)
+	at org.h2.command.Parser.getSchema(Parser.java:707)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:6559)
+	at org.h2.command.Parser.parseCreate(Parser.java:4615)
+	at org.h2.command.Parser.parsePrepared(Parser.java:380)
+	at org.h2.command.Parser.parse(Parser.java:335)
+	at org.h2.command.Parser.parse(Parser.java:307)
+	at org.h2.command.Parser.prepareCommand(Parser.java:278)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp.query(WebApp.java:1036)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:124)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:161)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-23 15:18:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE SCHEMA SEWING.[*]PATTERNS AUTHORIZATION SA "; SQL statement:
+create schema sewing.patterns authorization sa [42000-197]
+2019-11-23 15:19:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE SEWING.PATTERNS(ID INT PRIMARY KEY AUTO[*]-INCREMENT,
+PATTERNCOMPANY VARCHAR(255) DEFAULT ' ',
+PATTERNNUMBER VARCHAR(255) DEFAULT ' ',
+SIZERANGE VARCHAR(255) DEAULT ' ',
+PATTERNDESCRIPTION VARCHAR(255) DEFAULT ' ',
+PATTERNNOTES VARCHAR(255) DEFAULT ' ',) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+create table sewing.patterns(ID INT PRIMARY KEY AUTO-INCREMENT,
+patternCompany VARCHAR(255) DEFAULT ' ',
+patternNumber VARCHAR(255) DEFAULT ' ',
+sizeRange VARCHAR(255) DEAULT ' ',
+patternDescription VARCHAR(255) DEFAULT ' ',
+patternNotes VARCHAR(255) DEFAULT ' ',) [42001-197]
+2019-11-23 15:23:21 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE SEWING.PATTERNS (
+ID INT PRIMARY KEY AUTO[*]-INCREMENT,
+PATTERNCOMPANY VARCHAR(255) DEFAULT '',
+PATTERNNUMBER VARCHAR(255) DEFAULT '',
+SIZERANGE VARCHAR(255) DEAULT '',
+PATTERNDESCRIPTION VARCHAR(255) DEFAULT '',
+PATTERNNOTES VARCHAR(255) DEFAULT '',) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE sewing.patterns (
+ID INT PRIMARY KEY AUTO-INCREMENT,
+patternCompany VARCHAR(255) DEFAULT '',
+patternNumber VARCHAR(255) DEFAULT '',
+sizeRange VARCHAR(255) DEAULT '',
+patternDescription VARCHAR(255) DEFAULT '',
+patternNotes VARCHAR(255) DEFAULT '',) [42001-197]
+2019-11-23 15:23:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE SEWING.PATTERNS (
+ID INT PRIMARY KEY AUTO[*]-INCREMENT,
+PATTERNCOMPANY VARCHAR(255) DEFAULT '',
+PATTERNNUMBER VARCHAR(255) DEFAULT '',
+SIZERANGE VARCHAR(255) DEAULT '',
+PATTERNDESCRIPTION VARCHAR(255) DEFAULT '',
+PATTERNNOTES VARCHAR(255) DEFAULT '') "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE sewing.patterns (
+ID INT PRIMARY KEY AUTO-INCREMENT,
+patternCompany VARCHAR(255) DEFAULT '',
+patternNumber VARCHAR(255) DEFAULT '',
+sizeRange VARCHAR(255) DEAULT '',
+patternDescription VARCHAR(255) DEFAULT '',
+patternNotes VARCHAR(255) DEFAULT '') [42001-197]
+2019-11-23 15:36:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO sewing.patterns VALUES (1, 'Simplicity, 'W2341', 'Woman's sizes 6-14', 'Jackets', Sample notes here');
+INSERT INTO sewing.patterns values (2, 'Simplicity', '8431', 'Womans's sizes 6-14', 'DC Black Canary Bombshell', [*]""Sample Notes here');"; SQL statement:
+INSERT INTO sewing.patterns VALUES (1, 'Simplicity, 'W2341', 'Woman's sizes 6-14', 'Jackets', Sample notes here');
+INSERT INTO sewing.patterns values (2, 'Simplicity', '8431', 'Womans's sizes 6-14', 'DC Black Canary Bombshell', "Sample Notes here'); [42000-197]
+2019-11-23 15:41:07 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO SEWING.PATTERNS VALUES (1, 'Simplicity, 'W2341[*]', 'WOMAN's sizes 6-14', 'Jackets', 'Sample notes here') "; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO sewing.patterns VALUES (1, 'Simplicity, 'W2341', 'Woman's sizes 6-14', 'Jackets', 'Sample notes here') [42001-197]
+2019-11-23 15:41:07 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO sewing.patterns values (2, 'Simplicity', '8431', 'Womans's sizes 6-14', 'DC Black Canary Bombshell', 'Sample Notes here[*]');"; SQL statement:
+INSERT INTO sewing.patterns values (2, 'Simplicity', '8431', 'Womans's sizes 6-14', 'DC Black Canary Bombshell', 'Sample Notes here'); [42000-197]
+2019-11-23 15:42:11 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO sewing.patterns VALUES (1, 'Simplicity, 'W2341', 'Womans sizes 6 through 14', 'Jackets', 'Sample notes here');
+INSERT INTO sewing.patterns values (2, 'Simplicity', '8431', 'Womans sizes 6 through 14', 'DC Black Canary Bombshell', 'Sample Notes here[*]');"; SQL statement:
+INSERT INTO sewing.patterns VALUES (1, 'Simplicity, 'W2341', 'Womans sizes 6 through 14', 'Jackets', 'Sample notes here');
+INSERT INTO sewing.patterns values (2, 'Simplicity', '8431', 'Womans sizes 6 through 14', 'DC Black Canary Bombshell', 'Sample Notes here'); [42000-197]
+2019-11-23 15:43:13 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO sewing.patterns VALUES (1, 'Simplicity, 'W2341', 'Womans sizes 6 through 14', 'Jackets', 'Sample notes here[*]');"; SQL statement:
+INSERT INTO sewing.patterns VALUES (1, 'Simplicity, 'W2341', 'Womans sizes 6 through 14', 'Jackets', 'Sample notes here'); [42000-197]
+2019-11-23 15:46:18 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Cannot drop "SEWING" because "CATS, PATTERNS, PRIMARY_KEY_1, PRIMARY_KEY_7, CONSTRAINT_1, CONSTRAINT_7" depends on it; SQL statement:
+drop schema sewing [90107-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.command.ddl.DropSchema.update(DropSchema.java:59)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102)
+	at org.h2.command.Command.executeUpdate(Command.java:261)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp.query(WebApp.java:1036)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:124)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:161)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-23 15:47:21 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE SEWING.PATTERNS (
+ID INT PRIMARY KEY AUTO[*]-INCREMENT,
+PATTERNCOMPANY VARCHAR(255) DEFAULT '',
+PATTERNNUMBER VARCHAR(255) DEFAULT '',
+SIZERANGE VARCHAR(255) DEFAULT '',
+PATTERNDESCRIPTION VARCHAR(255) DEFAULT '',
+PATTERNNOTES VARCHAR(255) DEFAULT '') "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+create table sewing.patterns (
+ID INT PRIMARY KEY AUTO-INCREMENT,
+patternCompany VARCHAR(255) DEFAULT '',
+patternNumber VARCHAR(255) DEFAULT '',
+sizeRange VARCHAR(255) DEFAULT '',
+patternDescription VARCHAR(255) DEFAULT '',
+patternNotes VARCHAR(255) DEFAULT '') [42001-197]
+2019-11-23 15:55:12 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO sewing.patterns VALUES (3, Tilly and the Buttons', 'COCO' 'Womans sizes 2 through 16', 'Top and Dress', 'UK based independent company. Fill your wardrobe with classic Breton tops, cosy knit dresses and sixties-style funnel necks - all from the same pattern and no overlocker or serger required! Choose from top or dress length, boat neckline or funnel roll neck, long or three quarter sleeves with optional rolled cuffs and patch pockets.[*]');"; SQL statement:
+INSERT INTO sewing.patterns VALUES (3, Tilly and the Buttons', 'COCO' 'Womans sizes 2 through 16', 'Top and Dress', 'UK based independent company. Fill your wardrobe with classic Breton tops, cosy knit dresses and sixties-style funnel necks - all from the same pattern and no overlocker or serger required! Choose from top or dress length, boat neckline or funnel roll neck, long or three quarter sleeves with optional rolled cuffs and patch pockets.'); [42000-197]
+2019-11-23 15:56:06 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO sewing.patterns VALUES (3, Tilly and the Buttons', 'COCO' 'Womans sizes 2 through 16', 'Top and Dress', 'UK based independent company. Fill your wardrobe with classic Breton tops, cosy knit dresses and sixties style funnel necks all from the same pattern and no overlocker or serger required! Choose from top or dress length, boat neckline or funnel roll neck, long or three quarter sleeves with optional rolled cuffs and patch pockets.[*]');"; SQL statement:
+INSERT INTO sewing.patterns VALUES (3, Tilly and the Buttons', 'COCO' 'Womans sizes 2 through 16', 'Top and Dress', 'UK based independent company. Fill your wardrobe with classic Breton tops, cosy knit dresses and sixties style funnel necks all from the same pattern and no overlocker or serger required! Choose from top or dress length, boat neckline or funnel roll neck, long or three quarter sleeves with optional rolled cuffs and patch pockets.'); [42000-197]
