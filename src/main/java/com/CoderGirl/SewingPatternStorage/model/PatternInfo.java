@@ -6,26 +6,29 @@ public class PatternInfo {
     private String sizeRange;
     private String patternDescription;
     private String patternNotes;
+    private String keyword;
     private int id;
 
     public PatternInfo() {
     }
 
-    public PatternInfo(int id, String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes){
+    public PatternInfo(int id, String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
         this.id = id;
         this.patternCompany = patternCompany;
         this.patternNumber = patternNumber;
         this.sizeRange = sizeRange;
         this.patternDescription = patternDescription;
         this.patternNotes = patternNotes;
+        this.keyword = keyword;
     }
 
-    public PatternInfo(String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes){
+    public PatternInfo(String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
         this.patternCompany = patternCompany;
         this.patternNumber = patternNumber;
         this.sizeRange = sizeRange;
         this.patternDescription = patternDescription;
         this.patternNotes = patternNotes;
+        this.keyword = keyword;
     }
 
 
@@ -48,6 +51,10 @@ public class PatternInfo {
     public String getPatternNotes() {return patternNotes; }
 
     public void setPatternNotes (String patternNotes) {this.patternNotes = patternNotes; }
+
+    public String getKeyword() {return keyword; }
+
+    public void setKeyword(String keyword) {this.keyword = keyword;}
 
     public int getId() {return id; }
 

@@ -202,3 +202,49 @@ INSERT INTO sewing.patterns VALUES (3, Tilly and the Buttons', 'COCO' 'Womans si
 2019-11-23 15:56:06 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO sewing.patterns VALUES (3, Tilly and the Buttons', 'COCO' 'Womans sizes 2 through 16', 'Top and Dress', 'UK based independent company. Fill your wardrobe with classic Breton tops, cosy knit dresses and sixties style funnel necks all from the same pattern and no overlocker or serger required! Choose from top or dress length, boat neckline or funnel roll neck, long or three quarter sleeves with optional rolled cuffs and patch pockets.[*]');"; SQL statement:
 INSERT INTO sewing.patterns VALUES (3, Tilly and the Buttons', 'COCO' 'Womans sizes 2 through 16', 'Top and Dress', 'UK based independent company. Fill your wardrobe with classic Breton tops, cosy knit dresses and sixties style funnel necks all from the same pattern and no overlocker or serger required! Choose from top or dress length, boat neckline or funnel roll neck, long or three quarter sleeves with optional rolled cuffs and patch pockets.'); [42000-197]
+2019-11-26 15:43:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "PATTERN" not found; SQL statement:
+drop table sewing.pattern [42102-197]
+2019-11-26 15:44:19 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE SEWING.PATTERNS(ID INT PRIMARY KEY AUTO_INCREMENT,
+PATTERNCOMPANY VARCHAR(255) DEFAULT ' ',
+PATTERNNUMBER VARCHAR(255) DEFAULT ' ',
+SIZERANGE VARCHAR(255) DEAULT[*] ' ',
+PATTERNDESCRIPTION VARCHAR(255) DEFAULT ' ',
+PATTERNNOTES VARCHAR(255) DEFAULT ' ',
+KEYWORD VARCHAR(255) DEFAULT '') "; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+create table sewing.patterns(ID INT PRIMARY KEY AUTO_INCREMENT,
+patternCompany VARCHAR(255) DEFAULT ' ',
+patternNumber VARCHAR(255) DEFAULT ' ',
+sizeRange VARCHAR(255) DEAULT ' ',
+patternDescription VARCHAR(255) DEFAULT ' ',
+patternNotes VARCHAR(255) DEFAULT ' ',
+keyword VARCHAR(255) DEFAULT '') [42001-197]
+2019-11-26 15:45:26 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE SEWING.PATTERNS(ID INT PRIMARY KEY AUTO_INCREMENT,
+PATTERNCOMPANY VARCHAR(255) DEFAULT ' ',
+PATTERNNUMBER VARCHAR(255) DEFAULT ' ',
+SIZERANGE VARCHAR(255) DEAULT[*] ' ',
+PATTERNDESCRIPTION VARCHAR(255) DEFAULT ' ',
+PATTERNNOTES VARCHAR(255) DEFAULT ' ',
+KEYWORD VARCHAR(255) DEFAULT ' ' ) "; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+create table sewing.patterns(ID INT PRIMARY KEY AUTO_INCREMENT,
+patternCompany VARCHAR(255) DEFAULT ' ',
+patternNumber VARCHAR(255) DEFAULT ' ',
+sizeRange VARCHAR(255) DEAULT ' ',
+patternDescription VARCHAR(255) DEFAULT ' ',
+patternNotes VARCHAR(255) DEFAULT ' ',
+keyword VARCHAR(255) DEFAULT ' ' ) [42001-197]
+2019-11-26 15:45:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE SEWING.PATTERNS(ID INT PRIMARY KEY AUTO_INCREMENT,
+PATTERNCOMPANY VARCHAR(255) DEFAULT ' ',
+PATTERNNUMBER VARCHAR(255) DEFAULT ' ',
+SIZERANGE VARCHAR(255) DEAULT[*] ' ',
+PATTERNDESCRIPTION VARCHAR(255) DEFAULT ' ',
+PATTERNNOTES VARCHAR(255) DEFAULT ' ') "; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+create table sewing.patterns(ID INT PRIMARY KEY AUTO_INCREMENT,
+patternCompany VARCHAR(255) DEFAULT ' ',
+patternNumber VARCHAR(255) DEFAULT ' ',
+sizeRange VARCHAR(255) DEAULT ' ',
+patternDescription VARCHAR(255) DEFAULT ' ',
+patternNotes VARCHAR(255) DEFAULT ' ') [42001-197]
