@@ -16,7 +16,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
-@RequestMapping("patterns")
+//@RequestMapping("patterns")
 public class PatternController {
 
     @Autowired
@@ -34,14 +34,14 @@ public class PatternController {
     }
 
 
-    @RequestMapping("/about")
+    @RequestMapping(value = "/about")
     public String loadPatterOrganizationController() {
         return "about.html";
     }
 
     @GetMapping("/new")
     public String loadNewPatternsPage() {
-        return "patternsNew.html";
+        return "patternNew.html";
     }
 
     @RequestMapping(value = "/addPatterns", method = POST)

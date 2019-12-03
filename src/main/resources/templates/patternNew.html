@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="fragments :: head"></head>
+
 <body>
+
+<nav th:replace="fragments :: navigation"></nav>
+<h2>Enter new pattern details: </h2>
+<form action="/addPattern" method="POST">
+    <table class="center">
+        <tr>
+            <td>Pattern Company: </td>
+            <td><input name="patternCompany" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Pattern Number: </td>
+            <td><input name="patternNumber" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Size Range: </td>
+            <td><input name="sizeRange" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Pattern Description</td>
+            <td><input name="patternDescription" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Keyword</td>
+            <td><input name="keyword" type="text" /></td>
+        </tr>
+    </table>
+    <br />
+    <textarea name="patternNotes" placeholder="Pattern Notes"></textarea>
+    <br/>
+    <input type="submit" value="Save this Pattern"
+</form>
 
 </body>
 </html>

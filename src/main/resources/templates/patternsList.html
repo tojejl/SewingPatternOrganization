@@ -10,7 +10,7 @@
 
 This app is designed to help document and organize your sewing pattern collection.
 
-<p th:unless="${patterns} and {patterns.size()}">Something went wrong. Unable to load patterns list</p>
+<!--p th:unless="${patterns} and {pattern.size()}">Something went wrong. Unable to load patterns list</p-->
 
 <br/><br/>
 Number of Patterns currently in the system: <span th:text="${patterns.size()}">.</span>
@@ -18,9 +18,9 @@ Number of Patterns currently in the system: <span th:text="${patterns.size()}">.
     <ul>
         <th:block th:each="patterns: ${patterns}">
             <li>
-                <span th:text="${pattern.patternCompany}"></span>
+                <span th:text="${patterns.patternCompany}"></span>
                 <span> - </span>
-                <span th:text="${pattern.patternNumber}"></span>
+                <span th:text="${patterns.patternNumber}"></span>
                 <a th:href="@{'/edit/' + ${patterns.id}}">Learn More</a>
             </li>
         </th:block>
