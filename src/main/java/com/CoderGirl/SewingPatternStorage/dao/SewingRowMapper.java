@@ -1,14 +1,14 @@
 package com.CoderGirl.SewingPatternStorage.dao;
 
-import com.CoderGirl.SewingPatternStorage.model.PatternInfo;
+import com.CoderGirl.SewingPatternStorage.model.Pattern;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SewingRowMapper implements RowMapper<PatternInfo> {
+public class SewingRowMapper implements RowMapper<Pattern> {
 
-    public PatternInfo mapRow(ResultSet resultset, int ignoreThis) throws SQLException {
+    public Pattern mapRow(ResultSet resultset, int ignoreThis) throws SQLException {
 
         int id = resultset.getInt("id");
         String patternCompany = resultset.getString("patternCompany");
@@ -18,6 +18,6 @@ public class SewingRowMapper implements RowMapper<PatternInfo> {
         String patternNotes = resultset.getString("patternNotes");
         String keyword = resultset.getString("keyword");
 
-        return new PatternInfo(id, patternCompany, patternNumber, sizeRange, patternDescription, patternNotes, keyword);
+        return new Pattern(id, patternCompany, patternNumber, sizeRange, patternDescription, patternNotes, keyword);
     }
 }

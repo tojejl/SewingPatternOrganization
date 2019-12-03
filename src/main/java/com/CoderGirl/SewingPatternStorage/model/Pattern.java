@@ -1,6 +1,6 @@
 package com.CoderGirl.SewingPatternStorage.model;
 
-public class PatternInfo {
+public class Pattern {
     private String patternCompany;
     private String patternNumber;
     private String sizeRange;
@@ -9,10 +9,10 @@ public class PatternInfo {
     private String keyword;
     private int id;
 
-    public PatternInfo() {
+    public Pattern() {
     }
 
-    public PatternInfo(int id, String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
+    public Pattern(int id, String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
         this.id = id;
         this.patternCompany = patternCompany;
         this.patternNumber = patternNumber;
@@ -22,7 +22,7 @@ public class PatternInfo {
         this.keyword = keyword;
     }
 
-    public PatternInfo(String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
+    public Pattern(String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
         this.patternCompany = patternCompany;
         this.patternNumber = patternNumber;
         this.sizeRange = sizeRange;

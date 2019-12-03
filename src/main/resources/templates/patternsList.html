@@ -3,19 +3,37 @@
 <head th:replace="fragments :: head"></head>
 
 <body>
-<h2> Welcome</h2>
+<h2> Working title</h2>
 <nav th:replace="fragments :: navigation"></nav>
 
-<br/><br/>
-Number of Patterns currently in the system: <span th:text="${patterns.size()}">Count goes here!</span>
+<h1>Welcome!</h1>
 
-<ul>
-    <li th:each="pattern: ${patterns}" th:text="${pattern.PatternCompany}">Pattern goes here</li>
+This app is designed to help document and organize your sewing pattern collection.
+
+<p th:unless="${patterns} and {patterns.size()}">Something went wrong. Unable to load patterns list</p>
+
+<br/><br/>
+Number of Patterns currently in the system: <span th:text="${patterns.size()}">.</span>
+<div class="center">
+    <ul>
+        <th:block th:each="patterns: ${patterns}">
+            <li>
+                <span th:text="${pattern.patternCompany}"></span>
+                <span> - </span>
+                <span th:text="${pattern.patternNumber}"></span>
+                <a th:href="@{'/edit/' + ${patterns.id}}">Learn More</a>
+            </li>
+        </th:block>
+    </ul>
+</div>
+
+<!--ul>
+    <li th:each="patterns: ${patterns}" th:text="${pattern.PatternCompany}">Pattern goes here</li>
 </ul>
 
 <form action="/patterns/new" method="post">
     <input type="text" name="patternInfo" />
-    <input type="submit" value="Add This Pattern" />
-</form>
+    <input type="submit" value="Add This Pattern" / >
+</form-->
 </body>
 </html>

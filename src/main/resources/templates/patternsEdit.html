@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+
+<h2>Edit Pattern Details: </h2>
+<form method="POST" th:action="@{'/edit/' + ${pattern.id}}" th:object="${pattern}">
+    <table class="center">
+        <tr>
+            <td>Pattern Company: </td>
+            <td><input name="patternCompany" type="text" th:field="*{patternCompany}"/></td>
+        </tr>
+        <tr>
+            <td>Pattern Number :</td>
+            <td><input name="patternName" type="text" th:field="*{patternNumber}"/></td>
+        </tr>
+        <tr>
+            <td>Pattern Range of Sizes: </td>
+            <td><input name="sizeRange" type="text" th:field="*{sizeRange}"/></td>
+        </tr>
+        <tr>
+            <td>Pattern Styles: </td>
+            <td><input name="patternDescription" type="text" th:field="*{patternDescription}"/></td>
+        </tr>
+        <tr>
+            <td>Keyword: </td>
+            <td><input name="keyword" type="text" th:field="*{keyword}"/></td>
+        </tr>
+    </table>
+    <input type="hidden" th:field="*{id}" />
+    <p>Plant Notes...: </p>
+    <textarea name="patternNotes" th:field="*{patternNotes}"></textarea>
+    <br/>
+    <input type="submit" value="Save Edited Pattern" />
+</form>
+</body>
+</html>
