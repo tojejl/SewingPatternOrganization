@@ -21,18 +21,18 @@ public class SewingDAO {
 
     public void addPattern(Pattern pattern) {
         System.out.println("Inserting " + pattern);
-        jdbcTemplate.update(
-                "INSERT INTO sewing.patterns(patternCompany, patternNumber, sizeRange, " +
-                        "patternDescription, patternNotes, keyword) VALUES (?,?,?,?,?,?)",
-                pattern.getPatternCompany(), pattern.getPatternNumber(), pattern.getSizeRange(),
+        jdbcTemplate.update("INSERT INTO sewing.patterns(patternCompanyAndNumber, sizeRange, " +
+                        "patternDescription, patternNotes, keyword) VALUES (?,?,?,?,?,)",
+                pattern.getPatternCompanyAndNumber(),  pattern.getSizeRange(),
                 pattern.getPatternDescription(), pattern.getPatternNotes(), pattern.getKeyword());
     }
 
     public void updatePattern(int id, Pattern pattern) {
         System.out.println("Updating " + pattern);
-        jdbcTemplate.update(
-                "UPDATE sewing.patterns SET patternCompany=?, patternNumber=?, sizeRange=?, patternDescription=?, patternNotes=?, keyword=?, where id=?",
-                pattern.getPatternCompany(), pattern.getPatternNumber(), pattern.getSizeRange(), pattern.getPatternDescription(), pattern.getPatternNotes(), pattern.getKeyword(), id);
+        jdbcTemplate.update("UPDATE sewing.patterns SET patternCompanyAndNumber=?, patternNumber=?, sizeRange=? " +
+                "patternDescription=?, patternNotes=?, keyword=?, where id=?",
+                pattern.getPatternCompanyAndNumber(), pattern.getSizeRange(),
+                pattern.getPatternDescription(), pattern.getPatternNotes(), pattern.getKeyword(), id);
     }
 
     public Pattern findById(int id) {
@@ -51,6 +51,6 @@ public class SewingDAO {
 
     public List<Pattern> findByString(String keyword) {
         System.out.println("Finding patterns by searching strings... ");
-        return jdbcTemplate.query("select * from sewing.patterns WHERE patternKeyword LIKE ? ", new SewingRowMapper(), "%" + keyword + "%");
+        return jdbcTemplate.query("select * from sewing.patterns WHERE keyword LIKE ? ", new SewingRowMapper(), "%" + keyword + "%");
     }
 }

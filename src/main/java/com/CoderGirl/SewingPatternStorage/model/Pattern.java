@@ -1,30 +1,25 @@
 package com.CoderGirl.SewingPatternStorage.model;
 
 public class Pattern {
-    private String patternCompany;
-    private String patternNumber;
+    private String patternCompanyAndNumber;
     private String sizeRange;
     private String patternDescription;
     private String patternNotes;
     private String keyword;
     private int id;
 
-    public Pattern() {
-    }
 
-    public Pattern(int id, String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
+    public Pattern(int id, String patternCompanyAndNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
         this.id = id;
-        this.patternCompany = patternCompany;
-        this.patternNumber = patternNumber;
+        this.patternCompanyAndNumber = patternCompanyAndNumber;
         this.sizeRange = sizeRange;
         this.patternDescription = patternDescription;
         this.patternNotes = patternNotes;
         this.keyword = keyword;
     }
 
-    public Pattern(String patternCompany, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
-        this.patternCompany = patternCompany;
-        this.patternNumber = patternNumber;
+    public Pattern(String patternCompanyAndNumber, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
+        this.patternCompanyAndNumber = patternCompanyAndNumber;
         this.sizeRange = sizeRange;
         this.patternDescription = patternDescription;
         this.patternNotes = patternNotes;
@@ -32,13 +27,9 @@ public class Pattern {
     }
 
 
-    public String getPatternCompany() {return patternCompany; }
+    public String getPatternCompanyAndNumber() {return patternCompanyAndNumber; }
 
-    public void setPatternCompany(String patternCompany) {this.patternCompany = patternCompany;}
-
-    public String getPatternNumber() {return patternNumber; }
-
-    public void setPatternNumber(String patternNumber) {this.patternNumber = patternNumber;}
+    public void setPatternCompany(String patternCompanyAndNumber) {this.patternCompanyAndNumber = patternCompanyAndNumber;}
 
     public String getSizeRange() {return sizeRange; }
 

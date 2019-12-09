@@ -1,9 +1,10 @@
 body {
     text-align: center;
-    font-family: serif;
+    font-family: "Perpetua";
+    font-size: 16px;
+    margin: auto;
     background-color:  #846D74
-
-    }
+}
 
 ul {
     text-align: left;

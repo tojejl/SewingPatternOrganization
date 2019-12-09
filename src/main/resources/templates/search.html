@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="fragments :: head"></head>
+
 <body>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+
+<h1> Search for a Pattern</h1>
+<form method="get" th:action="@{'search'}" th:object="${pattern}">
+    <input type="text" name="keyword" placeholder="Search by Keyword">
+    <input type="submit" value="Search" />
+</form>
+
+<ul>
+    <li th:each="patternsInfo: ${patterns}" th:text="${patternsInfo.patternCompanyAndNumber}"></li>
+
+</ul>
 
 </body>
 </html>

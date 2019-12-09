@@ -11,13 +11,12 @@ public class SewingRowMapper implements RowMapper<Pattern> {
     public Pattern mapRow(ResultSet resultset, int ignoreThis) throws SQLException {
 
         int id = resultset.getInt("id");
-        String patternCompany = resultset.getString("patternCompany");
-        String patternNumber = resultset.getString("patternNumber");
+        String patternCompanyAndNumber = resultset.getString("patternCompanyAndNumber");
         String sizeRange = resultset.getString("sizeRange");
         String patternDescription = resultset.getString("patternDescription");
         String patternNotes = resultset.getString("patternNotes");
         String keyword = resultset.getString("keyword");
 
-        return new Pattern(id, patternCompany, patternNumber, sizeRange, patternDescription, patternNotes, keyword);
+        return new Pattern(id, patternCompanyAndNumber, sizeRange, patternDescription, patternNotes, keyword);
     }
 }

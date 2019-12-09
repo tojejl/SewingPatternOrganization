@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
-<body>
+<head th:replace="fragments :: head"></head>
 
+
+<body>
+<nav th:replace="fragments ::navigation"></nav>
+
+<h2>Successfully added a new pattern to the collection: <span th:text="${patternCompanyAndNumber}" /></h2>
+<p>Number of patterns currently in the system: <span th:text="${count}" /></p>
+
+<table class="center">
+    <tr>
+        <td>Pattern Company and Number: </td>
+        <td th:text="${patternNameAndCompany}"></td>
+    </tr>
+    <tr>
+        <td>Pattern Range of Sizes: </td>
+        <td th:text="${sizeRange}"></td>
+    </tr>
+    <tr>
+        <td>Pattern Styles: </td>
+        <td th:text="${patternDescription}"></td>
+    </tr>
+    <tr>
+        <td>Keyword: </td>
+        <td th:text="${keyword}"></td>
+    </tr>
+</table>
+<br/>
+<div th:text="${patternNotes}" class="description" style="..."></div>
 </body>
 </html>

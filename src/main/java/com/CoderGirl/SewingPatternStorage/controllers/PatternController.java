@@ -45,24 +45,21 @@ public class PatternController {
     }
 
     @RequestMapping(value = "/addPatterns", method = POST)
-    public String saveAddNewPatterns(Model model, @RequestParam String patternCompany,
-                                     @RequestParam String patternNumber,
+    public String saveAddNewPatterns(Model model, @RequestParam String patternCompanyAndNumber,
                                      @RequestParam String sizeRanges,
                                      @RequestParam String patternDescription,
                                      @RequestParam String patternNotes,
                                      @RequestParam String keyword) {
-        model.addAttribute("patternCompany", patternCompany);
-        model.addAttribute("patternNumber", patternNumber);
+        model.addAttribute("patternCompanyAndNumber", patternCompanyAndNumber);
         model.addAttribute("sizeRanges", sizeRanges);
         model.addAttribute("patternDescription", patternDescription);
         model.addAttribute("patternNotes", patternNotes);
         model.addAttribute("keyword", keyword);
 
-        System.out.println("Saved it..." + patternCompany + " " + " " + patternNumber +
-                " " + " " + sizeRanges + " " + " " + patternDescription +
+        System.out.println("Saved it..." + patternCompanyAndNumber + " " + " " + patternDescription +
                 " " + patternNotes + " " + " " + keyword);
 
-        sewingDAO.addPattern(new Pattern(-1, patternCompany, patternNumber, sizeRanges, patternDescription, patternNotes, keyword));
+        sewingDAO.addPattern(new Pattern(-1, patternCompanyAndNumber, sizeRanges, patternDescription, patternNotes, keyword));
 
         return confirmSavedPatterns(model);
     }
@@ -85,6 +82,12 @@ public class PatternController {
         return "patternsEdit.html";
     }
 
+    @PostMapping("/edit/{id}")
+    public String editPattern(@ModelAttribute Pattern pattern, @PathVariable int id) {
+        sewingDAO.updatePattern(id, pattern);
+        return "redirect:/patterns";
+    }
+
     @RequestMapping(value = "search", method = RequestMethod.GET)
     public String search(Model model, @RequestParam(value = "keyword", required = false) String keyword) {
         model.addAttribute("keyword", keyword);
@@ -95,20 +98,4 @@ public class PatternController {
 }
 
 
-    /*@RequestMapping("/new")
-    public String addNewPattern(Model model, @RequestParam String patternInfo){
-        System.out.println("Adding New Pattern: " + patternInfo);
 
-        patterns.add(new PatternInfo(patternInfo, null, null, null, null, null));
-        return "redirect:";
-
-    }
-     */
-
-
-    /*public PatternController(){
-        patterns = new ArrayList<PatternInfo>();
-        patterns.add(new PatternInfo("Simplicity W2341", null, null, null, null, null));
-    }
-
-     */
