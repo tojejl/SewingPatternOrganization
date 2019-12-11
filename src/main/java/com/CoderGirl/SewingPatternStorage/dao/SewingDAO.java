@@ -29,8 +29,7 @@ public class SewingDAO {
 
     public void updatePattern(int id, Pattern pattern) {
         System.out.println("Updating " + pattern);
-        jdbcTemplate.update("UPDATE sewing.patterns SET patternCompanyAndNumber=?, patternNumber=?, sizeRange=? " +
-                "patternDescription=?, patternNotes=?, keyword=?, where id=?",
+        jdbcTemplate.update("UPDATE sewing.patterns SET patternCompanyAndNumber=?, sizeRange=?, patternDescription=?, patternNotes=?, keyword=? where id=?",
                 pattern.getPatternCompanyAndNumber(), pattern.getSizeRange(),
                 pattern.getPatternDescription(), pattern.getPatternNotes(), pattern.getKeyword(), id);
     }

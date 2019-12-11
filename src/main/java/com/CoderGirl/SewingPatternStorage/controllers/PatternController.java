@@ -16,7 +16,6 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
-//@RequestMapping("patterns")
 public class PatternController {
 
     @Autowired
@@ -44,14 +43,14 @@ public class PatternController {
         return "patternNew.html";
     }
 
-    @RequestMapping(value = "/addPatterns", method = POST)
+    @RequestMapping(value = "/addPattern", method = POST)
     public String saveAddNewPatterns(Model model, @RequestParam String patternCompanyAndNumber,
-                                     @RequestParam String sizeRanges,
+                                     @RequestParam String sizeRange,
                                      @RequestParam String patternDescription,
                                      @RequestParam String patternNotes,
                                      @RequestParam String keyword) {
         model.addAttribute("patternCompanyAndNumber", patternCompanyAndNumber);
-        model.addAttribute("sizeRanges", sizeRanges);
+        model.addAttribute("sizeRange", sizeRange);
         model.addAttribute("patternDescription", patternDescription);
         model.addAttribute("patternNotes", patternNotes);
         model.addAttribute("keyword", keyword);
@@ -59,12 +58,12 @@ public class PatternController {
         System.out.println("Saved it..." + patternCompanyAndNumber + " " + " " + patternDescription +
                 " " + patternNotes + " " + " " + keyword);
 
-        sewingDAO.addPattern(new Pattern(-1, patternCompanyAndNumber, sizeRanges, patternDescription, patternNotes, keyword));
+        sewingDAO.addPattern(new Pattern(-1, patternCompanyAndNumber, sizeRange, patternDescription, patternNotes, keyword));
 
         return confirmSavedPatterns(model);
     }
 
-    @RequestMapping(value = "/addPatterns", method = GET)
+    @RequestMapping(value = "/addPattern", method = GET)
     public String confirmSavedPatterns(Model model) {
         List<Pattern> patterns = sewingDAO.getAll();
         model.addAttribute(("pattern"), patterns);

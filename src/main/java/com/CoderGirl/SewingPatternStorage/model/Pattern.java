@@ -8,6 +8,8 @@ public class Pattern {
     private String keyword;
     private int id;
 
+    public Pattern(){}
+
 
     public Pattern(int id, String patternCompanyAndNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
         this.id = id;
@@ -18,7 +20,7 @@ public class Pattern {
         this.keyword = keyword;
     }
 
-    public Pattern(String patternCompanyAndNumber, String patternNumber, String sizeRange, String patternDescription, String patternNotes, String keyword){
+    public Pattern(String patternCompanyAndNumber,  String sizeRange, String patternDescription, String patternNotes, String keyword){
         this.patternCompanyAndNumber = patternCompanyAndNumber;
         this.sizeRange = sizeRange;
         this.patternDescription = patternDescription;
@@ -29,7 +31,8 @@ public class Pattern {
 
     public String getPatternCompanyAndNumber() {return patternCompanyAndNumber; }
 
-    public void setPatternCompany(String patternCompanyAndNumber) {this.patternCompanyAndNumber = patternCompanyAndNumber;}
+    public void setPatternCompanyAndNumber(String patternCompanyAndNumber
+    ) {this.patternCompanyAndNumber = patternCompanyAndNumber;}
 
     public String getSizeRange() {return sizeRange; }
 
