@@ -1,14 +1,27 @@
 body {
+    font-family:   Courier New, serif;
     text-align: center;
-    font-family: "Perpetua";
-    font-size: 16px;
-    margin: auto;
-    background-color:  #846D74
+    background-color:  #846D74;
+    font-size: 14px;
+}
+
+.header {
+    text-align: center;
+    background-color: #808080;
+    border-bottom: solid 4px #00008b;
+    font-size: 18px;
 }
 
 ul {
     text-align: left;
+    font-size: 15px;
 }
+
+table.center {
+    margin-left:auto;
+    margin-right: auto;
+    text-align: left;
+    }
 
 
 
