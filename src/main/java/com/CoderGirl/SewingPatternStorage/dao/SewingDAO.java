@@ -50,6 +50,8 @@ public class SewingDAO {
 
     public List<Pattern> findByString(String keyword) {
         System.out.println("Finding patterns by searching strings... ");
-        return jdbcTemplate.query("select * from sewing.patterns WHERE keyword LIKE ? ", new SewingRowMapper(), "%" + keyword + "%");
+        return jdbcTemplate.query("select * from sewing.patterns WHERE lower( keyword) LIKE ? ", new SewingRowMapper(), "%" + keyword + "%");
     }
+
+    //public void delete
 }
